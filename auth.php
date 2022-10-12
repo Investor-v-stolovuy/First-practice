@@ -1,28 +1,25 @@
 <?php
 
-$login = filter_var(trim($_POST['login']), FILTER_SANITIZE_STRING);
-$pass = filter_var(trim($_POST['pass']), FILTER_SANITIZE_STRING);
+$login = filter_var(trim($_POST['login']), FILTER_UNSAFE_RAW);
+$pass = filter_var(trim($_POST['pass']), FILTER_UNSAFE_RAW);
 
-$pass = md5($pass."forhktkntuhpi"); // Создаем хэш из пароля
-
-$postgresql = new postgresql('localhost', 'root', '', 'register-bd');
+ // Создаем хэш из пароля
 
 
-$result = $postgresql->query("SELECT * FROM `first_practice` WHERE `login` = '$login' AND `password` = '$pass'");
-$user = $result->fetch_assoc(); // Конвертируем в массив
-if(count($user) == 0){
+$sql = pg_connect("host=localhost port=5432 dbname=postgres user=postgres password=sashaone9189");
+
+
+$result = pg_query($sql, "SELECT login, password FROM first_practice WHERE login = '$login' AND password = '$pass'");
+$user = pg_fetch_row($result); // Конвертируем в массив
+if(empty($user)){
     echo "Такой пользователь не найден.";
-    exit();
-}
-else if(count($user) == 1){
-    echo "Логин или пароль введены неверно";
     exit();
 }
 
 setcookie('user', $user['name'], time() + 3600, "/");
 
-$postgresql->close();
+pg_close($sql);
 
 header('Location: page.html');
 
-?>
+
