@@ -16,5 +16,3 @@ $user = pg_fetch_row($result); // Конвертируем в массив
         pg_close($sql);
 
         header('Location: page.html');
-
-
