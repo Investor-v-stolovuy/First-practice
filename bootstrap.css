@@ -98,7 +98,10 @@ body {
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
-
+.error {
+  color: #D8000C;
+  background-color: #FFBABA;
+}
 hr {
   margin: 1rem 0;
   color: inherit;
@@ -338,9 +341,10 @@ label {
 
 button {
   font-weight: 700;
+  margin: 10px;
+  padding: .8em 1em calc(.8em + 3px);
   color: white;
   text-decoration: none;
-  padding: .8em 1em calc(.8em + 3px);
   border-radius: 3px;
   background: rgb(64,199,129);
   box-shadow: 0 -3px rgb(53,167,110) inset;
