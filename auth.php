@@ -3,16 +3,16 @@
 $login = filter_var(trim($_POST['login']), FILTER_UNSAFE_RAW);
 $pass = filter_var(trim($_POST['pass']), FILTER_UNSAFE_RAW);
 
-$sql = pg_connect("host=localhost port=5432 dbname=postgres user=postgres password=sashaone9189");
+$mysql = new mysqli('localhost', 'sasha', 'sashaone9189', 'first_practice');
 
-$result = pg_query($sql, "SELECT login, password FROM first_practice WHERE login = '$login' AND password = '$pass'");
-$user = pg_fetch_row($result); // Конвертируем в массив
+$result = $mysql->query("SELECT * FROM `users` WHERE `login` = '$login' AND `password` = '$pass'");
+$user = $result->fetch_assoc();
         if (empty($user)) {
             echo "Пользователь не найден.";
             exit();
         }
         setcookie('user', $user['name'], time() + 3600, "/");
 
-        pg_close($sql);
+        $mysql->close();
 
         header('Location: page.html');
