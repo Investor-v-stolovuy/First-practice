@@ -2,14 +2,10 @@
 <html lang="ru">
 <head>
   <meta charset="utf-8">
-
   <link rel="stylesheet" href="bootstrap.css">
-
   <title>Форма обратной связи</title>
 </head>
 <body>
-
-
 <div class="col">
   <h1>Форма обратной связи</h1>
   <form action="feedback.php" method="post">
@@ -21,15 +17,13 @@
       <option>Ошибка</option>
       <option>Предложение</option>
     </select>
+    <br>
+    <br>
+    <textarea type="text" name="message" class="form-control" id="message" placeholder="Ваше сообщение"></textarea><br>
+    <button class="button">Отправить</button><br>
   </form>
 </div>
 <div>&nbsp;<br></div>
-<div>&nbsp;<br></div>
-    <div class="col">
-      <form action="feedback.php" method="post">
-    <textarea type="text" name="message" class="form-control" id="message" placeholder="Ваше сообщение"></textarea><br>
-  </form>
-    </div>
 <div>
   <input type="checkbox" class="custom-checkbox" id="check" name="check" value="yes">
   <label for="check">Согласие на обработку персональных данных</label>
@@ -45,11 +39,6 @@
   <label for="radio-2">Не отправлять</label>
 </div>
 <div>&nbsp;<br></div>
-<div class="col">
-  <form action="feedback.php" method="post">
-    <button class="button">Отправить</button><br>
-  </form>
-</div>
 <div>&nbsp;<br></div>
 <div class="col">
 <form action="exit.php" method="post">
@@ -58,6 +47,5 @@
 </div>
 </div>
 </div>
-
 </body>
 </html>
