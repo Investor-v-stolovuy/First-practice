@@ -20,26 +20,36 @@
     <br>
     <br>
     <textarea type="text" name="message" class="form-control" id="message" placeholder="Ваше сообщение"></textarea><br>
+    <div>
+      <input type="checkbox" class="custom-checkbox" id="check" name="check" value="yes_data">
+      <label for="check">Согласие на обработку персональных данных</label>
+    </div>
+    <div>&nbsp;<br></div>
+    <div>
+      <input type="checkbox" class="custom-checkbox" id="check1" name="check1" value="yes_news">
+      <label for="check1">Подписаться на новостную рассылку</label>
+    </div>
+    <div>&nbsp;<br></div>
+    <div>
+      <input type="checkbox" class="custom-checkbox" id="check2" name="check1" value="yes_test">
+      <label for="check2">Тестовый пользователь</label>
+    </div>
+    <div>&nbsp;<br></div>
+    <div class="form_radio_btn">
+      <input id="radio-1" type="radio" name="radio" value="send_mail">
+      <label for="radio-1">Отправить мне сообщение об успешной доставке</label>
+    </div>
+    <div>&nbsp;<br></div>
+    <div class="form_radio_btn">
+      <input id="radio-2" type="radio" name="radio" value="not_send" checked>
+      <label for="radio-2">Не отправлять</label>
+    </div>
+    <div>&nbsp;<br></div>
+    <div>&nbsp;<br></div>
     <button class="button">Отправить</button><br>
+    <div>&nbsp;<br></div>
   </form>
 </div>
-<div>&nbsp;<br></div>
-<div>
-  <input type="checkbox" class="custom-checkbox" id="check" name="check" value="yes">
-  <label for="check">Согласие на обработку персональных данных</label>
-</div>
-<div>&nbsp;<br></div>
-<div class="form_radio_btn">
-<input id="radio-1" type="radio" name="radio" value="1">
-<label for="radio-1">Отправить мне сообщение об успешной доставке</label>
-</div>
-<div>&nbsp;<br></div>
-<div class="form_radio_btn">
-  <input id="radio-2" type="radio" name="radio" value="2" checked>
-  <label for="radio-2">Не отправлять</label>
-</div>
-<div>&nbsp;<br></div>
-<div>&nbsp;<br></div>
 <div class="col">
 <form action="exit.php" method="post">
   <button class="button">Выход</button><br>
